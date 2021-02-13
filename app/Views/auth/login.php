@@ -45,21 +45,21 @@
                                     </div>
                                     <form class="user" method="POST" action="<?= base_url('login') ?>">
                                         <?= csrf_field(); ?>
-                                        <?php $validation = \Config\Services::validation() ?>
-                                        <?php if ($validation->getErrors()): ?>
+                                        <?php $validation = \Config\Services::validation(); ?>
+                                        <?php if($validation->getErrors()) : ?>
                                             <div class="alert alert-danger">
-                                                <div class="mt-2">
+                                                <div class="mt-2 mr-3">
                                                     <?= $validation->listErrors() ?>
                                                 </div>
                                             </div>
                                         <?php endif; ?>
                                         <div class="form-group">
-                                            <input required="" name="email" type="email" class="form-control form-control-user"
+                                            <input required name="email" type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input required="" name="password" type="password" class="form-control form-control-user"
+                                            <input required name="password" type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">

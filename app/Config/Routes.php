@@ -52,6 +52,10 @@ $routes->post('/logout',function(){
 $routes->group('admin',['filter' => 'auth'],function($routes){
 
 	$routes->get('/','Admin::index');
+	$routes->get('profile','Profile::index');
+	$routes->patch('profile','Profile::updateProfile');
+	$routes->get('change-password','Profile::editPassword');
+	$routes->patch('change-password','Profile::updatePassword');
 
 	//Resource Route
 	$routes->resource('users');

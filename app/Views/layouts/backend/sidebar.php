@@ -60,15 +60,15 @@
     </div>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item <?= url_is('admin/profile') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/profile') ?>">
             <i class="fas fa-fw fa-user"></i>
             <span>Profil</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
             <i class="fas fa-fw fa-key"></i>
             <span>Ubah Password</span></a>
     </li>

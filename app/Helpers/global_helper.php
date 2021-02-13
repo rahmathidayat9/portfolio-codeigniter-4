@@ -1,7 +1,13 @@
 <?php 
 
+function db()
+{
+	$connect = \Config\Database::connect();
+	return $connect;
+}
+
 function countRow($table)
 {
-	$db = \Config\Database::connect();
-	return $db->table($table)->countAll();
+	$count = db()->table($table)->countAll();
+	return $count;
 }

@@ -13,30 +13,27 @@ class Login extends BaseController
 	public function __construct()
 	{
 		$this->loginModel = new LoginModel;
-		$this->validation = \Config\Services::validation();
 	}
 
 	public function authenticate()
 	{
-		// $this->validation->setRule('email','Email','required|valid_email');
-
-		// $this->validation->setRules([
-		// 	'email' => 'required|valid_email',
-		// 	'password' => 'required',
-		// ]);
-
-		$validations = $this->validate([
-						'email' => 'required|valid_email',
-						'password' => 'required'
-					]);
-		
-		if (!$validations) {
-			return view('auth/login');
-		}else{
+		if ($this->loginValidate()) {
 			$email 		= $this->request->getVar('email');
 			$password 	= $this->request->getVar('password');
+			
+			return $this->loginModel->doLogin($email,$password);
+		}else{
+			return view('auth/login');
+		}	
+	}
 
-			return $this->loginModel->doLogin($email,$password);	
-		}
+	protected function loginValidate()
+	{
+		$validate = $this->validate([
+			'email' => 'required|valid_email',
+			'password' => 'required',
+		]);
+
+		return $validate;
 	}
 }
