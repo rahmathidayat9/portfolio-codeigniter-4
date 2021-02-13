@@ -44,14 +44,12 @@ class Users extends BaseController
 	}
 
 	public function edit($id)
-	{
-		$data = $this->db->table('users')->where('id',$id)->get()->getResult();
-		return $this->response->setJSON($data);
-		// $data = [
-		// 	'user' => $this->userModel->getFirstData($id)
-		// ];
+	{	
+		$data = [
+			'user' => $this->userModel->getFirstData($id)
+		];
 
-		// return view('admin/users/edit',$data);
+		return view('admin/users/edit',$data);
 	}
 
 	public function update($id)

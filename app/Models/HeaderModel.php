@@ -14,7 +14,9 @@ class HeaderModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = [
+		'title','navbar_title','up_text','down_text','image','is_active',
+	];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -39,4 +41,29 @@ class HeaderModel extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+
+	public function getAllData()
+	{
+		return $this->get()->getResult();
+	}
+
+	public function getFirstData($id)
+	{
+		return $this->getWhere(['id' => $id])->getRow();
+	}
+
+	public function insertData($data)
+	{
+		return $this->insert($data);
+	}
+
+	public function updateData($data,$id)
+	{
+		return $this->where('id',$id)->set($data)->update();
+	}
+
+	public function deleteData($id)
+	{
+		return $this->where('id',$id)->delete();
+	}
 }

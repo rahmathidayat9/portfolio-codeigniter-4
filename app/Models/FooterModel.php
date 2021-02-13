@@ -39,4 +39,29 @@ class FooterModel extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+
+	public function getAllData()
+	{
+		return $this->get()->getResult();
+	}
+
+	public function getFirstData($id)
+	{
+		return $this->getWhere(['id' => $id])->getRow();
+	}
+
+	public function insertData($data)
+	{
+		return $this->insert($data);
+	}
+
+	public function updateData($data,$id)
+	{
+		return $this->where('id',$id)->set($data)->update();
+	}
+
+	public function deleteData($id)
+	{
+		return $this->where('id',$id)->delete();
+	}
 }

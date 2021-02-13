@@ -117,6 +117,18 @@
     <?= $this->renderSection('js'); ?>
     <!-- Page level custom scripts -->
     <script src="<?= base_url('templates/backend/sb-admin-2') ?>/js/demo/datatables-demo.js"></script>
+
+    <script type="text/javascript">
+        $(".custom-file-input").on("change",function(){
+            let filename = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass("selected").html(filename)
+        })
+
+        $(".toHome").click(function(){
+            let url = $(this).data('url')
+            window.open(url)
+        })
+    </script>
 </body>
 
 </html>

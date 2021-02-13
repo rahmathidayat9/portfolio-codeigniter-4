@@ -36,7 +36,7 @@
     <li class="nav-item <?= url_is('admin/headers') ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('admin/headers') ?>">
             <i class="fas fa-fw fa-circle"></i>
-            <span>Header</span></a>
+            <span>Headers</span></a>
     </li>
 
     <li class="nav-item">
