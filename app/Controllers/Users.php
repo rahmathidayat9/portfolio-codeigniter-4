@@ -15,9 +15,9 @@ class Users extends BaseController
 	} 
 
 	public function index()
-	{
+	{	
 		$data = [
-			'users' => $this->userModel->getAllData(), 
+			'users' => $this->userModel->getAllData()
 		];
 
 		return view('admin/users/index',$data);

@@ -61,6 +61,30 @@ class Headers extends BaseController
 		}
 	}
 
+	public function edit($id)
+	{
+		$data = [
+			'header' => $this->headerModel->getFirstData($id),
+		];
+
+		return view('admin/headers/edit',$data);
+	}
+
+	public function update($id)
+	{
+		$data = [
+			'title' => $this->request->getVar('title'),
+			'navbar_title' => $this->request->getVar('navbar_title'),
+			'up_text' => $this->request->getVar('up_text'),
+			'down_text' => $this->request->getVar('down_text'),
+		];
+
+		$this->headerModel->updateData($data,$id);
+		
+		session()->setFlashData('success','Data berhasil diupdate');
+		return redirect()->to('/admin/headers');
+	}
+
 	public function delete($id)
 	{
 		$header = $this->headerModel->getFirstData($id);

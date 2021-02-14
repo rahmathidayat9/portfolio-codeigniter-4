@@ -2,13 +2,13 @@
 
 <!-- PAGE TITLE -->
 <?= $this->section('title') ?>
-	Tambah Header
+	Edit Header
 <?= $this->endSection() ?>
 <!-- PAGE TITLE -->
 
 <!-- CONTENT TITLE -->
 <?= $this->section('contentTitle') ?>
-	Tambah Header
+	Edit Header
 <?= $this->endSection() ?>
 <!-- CONTENT TITLE -->
 
@@ -20,33 +20,27 @@
         <a href="<?= base_url('admin/headers') ?>" class="btn btn-success btn-sm">Kembali</a>
     </div>
     <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="<?= base_url('admin/headers') ?>">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url('admin/headers/'.$header->id) ?>">
             <?= csrf_field() ?>
+            <input type="hidden" name="_method" value="PATCH">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input placeholder="example : MyPortfolioWebsite" required="" type="" name="title" id="title" class="form-control">
+                <input value="<?= $header->title ?>" placeholder="example : MyPortfolioWebsite" required="" type="" name="title" id="title" class="form-control">
             </div>
             <div class="form-group">
                 <label for="navbar_title">Navbar Title</label>
-                <input placeholder="example : myPortfolioWebsite" required="" type="" name="navbar_title" id="navbar_title" class="form-control">
+                <input value="<?= $header->navbar_title ?>" placeholder="example : myPortfolioWebsite" required="" type="" name="navbar_title" id="navbar_title" class="form-control">
             </div>
             <div class="form-group">
                 <label for="up_text">Up Text</label>
-                <input placeholder="I'M Pandora" required="" type="" name="up_text" id="up_text" class="form-control">
+                <input value="<?= $header->up_text ?>" placeholder="I'M Pandora" required="" type="" name="up_text" id="up_text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="down_text">Down Text</label>
-                <input placeholder="I'm a student,gamer,web developer" required="" type="" name="down_text" id="down_text" class="form-control">
+                <input value="<?= $header->down_text ?>" placeholder="I'm a student,gamer,web developer" required="" type="" name="down_text" id="down_text" class="form-control">
             </div>
             <div class="form-group">
-                <label for="customFile">Image</label>
-                <div class="custom-file">
-                  <input required="" type="file" name="file" class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Choose file</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-sm">SIMPAN</button>
+                <button type="submit" class="btn btn-primary btn-sm">UPDATE</button>
             </div>
         </form>
     </div>

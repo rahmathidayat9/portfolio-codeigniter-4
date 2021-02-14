@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Home::index');
 
-//Auth
+// Auth
 $routes->get('/login',function(){
 	return view('auth/login');
 });
@@ -46,24 +46,31 @@ $routes->post('/logout',function(){
 	session()->destroy();
 	return redirect()->to('/login');
 });
-//Auth
 
-//Admin
+
+// Admin
 $routes->group('admin',['filter' => 'auth'],function($routes){
 
 	$routes->get('/','Admin::index');
+	
+	// profile
 	$routes->get('profile','Profile::index');
 	$routes->patch('profile','Profile::updateProfile');
 	$routes->get('change-password','Profile::editPassword');
 	$routes->patch('change-password','Profile::updatePassword');
 
-	//Resource Route
+	// layout
+	$routes->get('layout/header','Layout::header');
+	$routes->post('layout/setheader/','Layout::setHeader');
+
+	// Route Resource
 	$routes->resource('users');
 	$routes->resource('headers');
+	$routes->resource('about');
+	$routes->resource('portfolio');
 	$routes->resource('footers');
 
 });
-//Admin
 
 /*
  * --------------------------------------------------------------------

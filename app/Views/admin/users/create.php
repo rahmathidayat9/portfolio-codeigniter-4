@@ -17,7 +17,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <a href="<?= base_url('users') ?>" class="btn btn-success btn-sm">Kembali</a>
+        <a href="<?= base_url('admin/users') ?>" class="btn btn-success btn-sm">Kembali</a>
     </div>
     <div class="card-body">
         <form method="POST" action="<?= base_url('admin/users') ?>">

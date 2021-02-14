@@ -46,7 +46,7 @@
                         <td><?= $header->down_text ?></td>
                         <td>
                             <div class="row ml-2">
-                                <a href="javascript:void(0)" id="<?= $header->id ?>" class="btn btn-primary btn-sm btn-edit">Edit</a>
+                                <a href="<?= base_url('admin/headers/'.$header->id.'/edit') ?>" id="<?= $header->id ?>" class="btn btn-primary btn-sm btn-edit">Edit</a>
                                 <form method="POST" action="<?= base_url('admin/headers/'.$header->id) ?>">
                                     <?= csrf_field() ?>
                                     <input type="hidden" name="_method" value="DELETE">

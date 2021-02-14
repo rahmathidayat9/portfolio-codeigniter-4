@@ -30,23 +30,63 @@
     <li class="nav-item <?= url_is('admin/users') ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('admin/users') ?>">
             <i class="fas fa-fw fa-user-tie"></i>
-            <span>Users</span></a>
+            <span>Data Users</span></a>
     </li>
 
     <li class="nav-item <?= url_is('admin/headers') ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('admin/headers') ?>">
             <i class="fas fa-fw fa-circle"></i>
-            <span>Headers</span></a>
+            <span>Data Headers</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admin/users') ?>">
             <i class="fas fa-fw fa-circle"></i>
-            <span>About</span></a>
+            <span>Data About</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admin/users') ?>">
+            <i class="fas fa-fw fa-circle"></i>
+            <span>Data Portfolio</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('admin/users') ?>">
+            <i class="fas fa-fw fa-circle"></i>
+            <span>Data Footers</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Manage Layout
+    </div>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item <?= url_is('admin/layout/header') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/layout/header') ?>">
+            <i class="fas fa-fw fa-circle"></i>
+            <span>Header</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
+            <i class="fas fa-fw fa-circle"></i>
+            <span>About</span></a>
+    </li>
+    
+    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
+            <i class="fas fa-fw fa-circle"></i>
+            <span>Portfolio</span></a>
+    </li>
+
+    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>Footer</span></a>
     </li>
