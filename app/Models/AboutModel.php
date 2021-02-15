@@ -14,7 +14,9 @@ class AboutModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = [
+		'title','description','name','image','email','role','phone','is_active'
+	];
 
 	// Dates
 	protected $useTimestamps        = false;

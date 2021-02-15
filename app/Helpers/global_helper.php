@@ -34,3 +34,39 @@ if (!function_exists('setHeader')) {
 		return $header;	
 	}	
 }
+
+//set About Pada Halaman depan web 
+if (!function_exists('setAbout')) {
+	function setAbout()
+	{
+		$about = db()->table('about')->getWhere(['is_active' => 1])->getRow();
+		return $about;	
+	}	
+}
+
+//set Portfolio Pada Halaman depan web 
+if (!function_exists('setPortfolio')) {
+	function setPortfolio()
+	{
+		$portfolio = db()->table('portfolio')->get()->getResult();
+		return $portfolio;	
+	}	
+}
+
+//set Skills Pada Halaman depan web 
+if (!function_exists('setSkill')) {
+	function setSkill()
+	{
+		$skill = db()->table('skills')->get()->getResult();
+		return $skill;	
+	}	
+}
+
+//set Footer Pada Halaman depan web 
+if (!function_exists('setFooter')) {
+	function setFooter()
+	{
+		$footer = db()->table('footers')->getWhere(['is_active' => 1])->getRow();
+		return $footer;	
+	}	
+}

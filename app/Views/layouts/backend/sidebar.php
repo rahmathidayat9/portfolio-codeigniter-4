@@ -39,20 +39,20 @@
             <span>Data Headers</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/users') ?>">
+    <li class="nav-item <?= url_is('admin/about') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/about') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>Data About</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/users') ?>">
+    <li class="nav-item <?= url_is('admin/portfolio') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/portfolio') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>Data Portfolio</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/users') ?>">
+    <li class="nav-item <?= url_is('admin/footers') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/footers') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>Data Footers</span></a>
     </li>
@@ -73,20 +73,14 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
+    <li class="nav-item <?= url_is('admin/layout/about') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/layout/about') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>About</span></a>
     </li>
-    
-    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
-            <i class="fas fa-fw fa-circle"></i>
-            <span>Portfolio</span></a>
-    </li>
 
-    <li class="nav-item <?= url_is('admin/change-password') ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('admin/change-password') ?>">
+    <li class="nav-item <?= url_is('admin/layout/footer') ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('admin/layout/footer') ?>">
             <i class="fas fa-fw fa-circle"></i>
             <span>Footer</span></a>
     </li>

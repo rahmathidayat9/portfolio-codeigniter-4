@@ -34,7 +34,7 @@ class Headers extends BaseController
 		$validate =	$this->validate([
 						'file' => [
 							'uploaded[file]',
-							'mime_in[file,image/jpg,image/png,image/gif,image/jpeg]',
+							'mime_in[file,image/jpg,image/png,image/gif,image/jpeg,image/svg]',
 							'max_size[file,4096]',
 						],
 					]);

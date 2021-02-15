@@ -14,7 +14,9 @@ class FooterModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = [
+		'title','description','address','phone','email','copyright','is_active'
+	];
 
 	// Dates
 	protected $useTimestamps        = false;

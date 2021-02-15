@@ -61,14 +61,21 @@ $routes->group('admin',['filter' => 'auth'],function($routes){
 
 	// layout
 	$routes->get('layout/header','Layout::header');
-	$routes->post('layout/setheader/','Layout::setHeader');
+	$routes->post('layout/setheader','Layout::setHeader');
+
+	$routes->get('layout/about','Layout::about');
+	$routes->post('layout/setabout','Layout::setAbout');
+
+	$routes->get('layout/footer','Layout::footer');
+	$routes->post('layout/setfooter','Layout::setFooter');
 
 	// Route Resource
 	$routes->resource('users');
 	$routes->resource('headers');
 	$routes->resource('about');
-	$routes->resource('portfolio');
 	$routes->resource('footers');
+	$routes->resource('portfolio');
+	$routes->resource('skills');
 
 });
 

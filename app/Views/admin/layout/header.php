@@ -3,13 +3,13 @@
 
 <!-- PAGE TITLE -->
 <?= $this->section('title') ?>
-	Manage Headers
+	Manage Header Layout
 <?= $this->endSection() ?>
 <!-- PAGE TITLE -->
 
 <!-- CONTENT TITLE -->
 <?= $this->section('contentTitle') ?>
-	Manage Headers
+	Manage Header Layout
 <?= $this->endSection() ?>
 <!-- CONTENT TITLE -->
 
